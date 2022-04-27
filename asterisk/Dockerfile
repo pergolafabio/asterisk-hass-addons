@@ -198,6 +198,14 @@ RUN \
     # We require this for module format_mp3.so \
     contrib/scripts/get_mp3_source.sh
 
+## Install app_rtsp_sip
+WORKDIR /usr/src/asterisk
+COPY patches/rtsp_sip_links.sh /usr/src/asterisk
+RUN ./rtsp_sip_links.sh
+
+WORKDIR /usr/src/asterisk/apps
+COPY patches/app_rtsp_sip.c /usr/src/asterisk/apps
+
 ENV INSTALL_DIR="/opt/asterisk"
 
 RUN \
