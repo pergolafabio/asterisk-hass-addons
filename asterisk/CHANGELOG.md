@@ -2,6 +2,54 @@
 
 # Changelog
 
+## 2.4.0
+
+- Add `chan_sip` (disabled by default) for Dahua VTO compatibility (by @bdherouville)
+
+### Breaking changes
+
+**Delete the old `sip.conf` and `modules.conf`.** This disables `chan_sip` by default and sets it on another port to prevent conflicts with `pjsip`.
+
+## 2.3.5
+
+- Upgrade Asterisk from 20.0.1 to 20.1.0 (by @felipecrs)
+- Fix tmp dir for googletts and speech-recog (by @felipecrs)
+  - Now they use `/data/tmp` instead of `tmp`, which is retained between restarts (but deleted upon uninstall) for add-ons.
+- Refactor the installation of all patches for easier maintenance (by @felipecrs)
+
+## 2.3.4
+
+- Upgrade Asterisk from 18.15.0 to 20.0.1 (by @felipecrs)
+- Upgrade addon-debian-base from 6.1.3 to 6.2.0 (by @felipecrs)
+
+## 2.3.3
+
+- Fix add-on failing to start sometimes (by @felipecrs)
+- Upgrade Asterisk from 18.14.0 to 18.15.0 (by @felipecrs)
+- Upgrade addon-debian-base from 6.1.1 to 6.1.3 (by @felipecrs)
+- Upgrade asterisk-chan-dongle to [503dba8](https://github.com/wdoekes/asterisk-chan-dongle/commit/503dba87d726854b74b49e70679e64e6e86d5812) (by @felipecrs)
+
+## 2.3.2
+
+- Upgrade Asterisk from 18.12.1 to 18.14.0 (by @felipecrs)
+- Upgrade addon-debian-base from 6.0.0 to 6.1.1 (by @felipecrs)
+
+## 2.3.1
+
+- Only include rtsp-sip for amd64 and i386 (by @TECH7Fox)
+
+## 2.3.0
+
+- Add php (by @TECH7Fox)
+- Add rtsp-sip (by @TECH7Fox)
+- Update builder and linter (by @felipecrs)
+
+## 2.2.0
+
+- Add pt-BR translations (by @LeandroIssa)
+- Upgrade addon-base from 5.3.0 to 6.0.0 (by @felipecrs)
+- Upgrade Asterisk from 18.10.1 to 18.12.1 (by @felipecrs)
+
 ## 2.1.5
 
 - Fix domain bug that makes the WS contacts unreachable (by @TECH7Fox)
